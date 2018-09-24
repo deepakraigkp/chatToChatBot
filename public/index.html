@@ -3,8 +3,18 @@
     <head>
         <title>chatToChatBot</title>
         <meta charset="utf-8">
+        <script src="socket.io/socket.io.js"></script>
     </head>
     <body>
         <p>Welcome to the chat app</p>
+        <script>
+            var server = io();
+            server.on('connect', () => {
+                console.log('connected to server');
+            });
+            server.on('disconnect', () => {
+                console.log('disconnected from server');
+            });
+        </script>
     </body>
 </html>
